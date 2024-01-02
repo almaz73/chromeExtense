@@ -1,7 +1,13 @@
 console.log("This is a popup!")
+let time = new Date().toLocaleString()
+console.log(time)
+let timeDiv = document.querySelector('#time')
+timeDiv.innerHTML = time
 
 let buttonSaveOperator = document.getElementById("buttonSaveOperator");
 buttonSaveOperator.addEventListener("click", saveOperator, false);
+let getButton = document.getElementById("getButton");
+getButton.addEventListener("click", getData, false);
 let button = document.getElementById("mybutton");
 button.addEventListener("click", start, false);
 let operator = document.querySelector('#operator')
@@ -26,19 +32,22 @@ function start() {
         list.classList.add('active')
     }
     console.log('list', list)
-    send()
 }
 
-function send(){
-    chrome.tabs.query({}, function(tabs) {
+function getData(){
+    chrome.tabs.query({ currentWindow: true, active: true }, function(tabs) {
         for (i = 0; i < tabs.length; i++) {
             chrome.tabs.sendMessage(tabs[i].id, 'Сообщение, которое нужно передать 11111', cb);
         }
+
+        // chrome.tabs.sendMessage(tabs[0].id, 'Сообщение от popup', cb);
     });
 }
 
 function cb(val) {
-   if(val) console.log('val', val)
+    if (!chrome.runtime.lastError) {
+        if (val) console.log('val', val)
+    }
 }
 
 
