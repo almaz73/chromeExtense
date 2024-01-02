@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 8px;
+            background: orange;
+            min-width: 400px;
+            border: 5px solid orangered;
+        }
+        .list{
+            display: none;
+        }
+        .list.active{
+            display: block;
+        }
+        #buttonSaveOperator{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Апельсин!</h1>
+<div style="white-space: nowrap">
+    <label>Оператор:
+        <input id="operator">
+    </label>
+    <button id="buttonSaveOperator">Сохранить</button>
+</div>
+<div class="list">
+    СПИСОК
+</div>
+
+
+<button id="mybutton">Показать/скрыть список</button>
+<script src="popup.js"></script>
+</body>
+</html>

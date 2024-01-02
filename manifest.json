@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Apelsin Extensions",
+  "description": "Помогаем быть счастливее",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "img/icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [ {
+    "js": ["script/content.js"],
+    "matches": [
+      "https://developer.chrome.com/docs/extensions/*",
+      "https://developer.chrome.com/docs/webstore/*",
+      "https://www.avito.ru/*",
+      "https://fmap.ru/games/*"
+    ]
+  }]
+}
