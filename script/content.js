@@ -1,9 +1,18 @@
 chrome.runtime.onMessage.addListener( // this is the message listener
     function (request, sender, sendResponse) {
-        console.log('>>>' + request);
-        getData(sendResponse)
+        console.log('>>request>' + request);
+        console.log('>>sendResponse>' + sendResponse);
+        if(request.length>12)getData(sendResponse)
+        else toScrollIntoView(request)
     }
 );
+
+function toScrollIntoView(id) {
+    console.log('---id', id)
+    var hiddenElement = document.getElementById(id);
+    console.log('hiddenElement', hiddenElement)
+    hiddenElement.scrollIntoView({ block: "center", behavior: "smooth" });
+}
 
 
 function getData(sendResponse) {
