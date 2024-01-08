@@ -21,6 +21,7 @@
   "content_scripts": [ {
     "js": ["script/content.js"],
     "matches": [
+      "https://dev.autonet.pro/",
       "https://developer.chrome.com/docs/extensions/*",
       "https://developer.chrome.com/docs/webstore/*",
       "https://www.avito.ru/*",
