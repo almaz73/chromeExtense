@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Поиск элемента",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+
+  "background": {
+    "service_worker": "assets/background.js"
+  },
+  "action": {
+    "default_popup": "assets/popup.html",
+    "default_icon": "assets/icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["https://dev.autonet.pro/*","https://fmap.ru/games/*"]}
+  ],
+  "content_scripts": [ {
+    "js": ["assets/script/content.js"],
+    "matches": [
+      "https://developer.chrome.com/docs/extensions/*",
+      "https://developer.chrome.com/docs/webstore/*",
+      "https://www.avito.ru/*",
+      "https://fmap.ru/games/*"
+    ]
+  }]
+}
