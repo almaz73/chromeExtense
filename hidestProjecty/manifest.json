@@ -22,11 +22,6 @@
     "default_popup": "assets/popup.html",
     "default_icon": "assets/images/icon-16.png"
   },
-  "content_scripts": [
-    {
-      "js": ["content.js"],
-      "matches": ["https://dev.autonet.pro/*","https://fmap.ru/games/*"]}
-  ],
   "content_scripts": [ {
     "js": ["assets/script/content.js"],
     "matches": [
