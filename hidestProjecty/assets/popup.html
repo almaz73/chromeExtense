@@ -1,32 +1,72 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        body {
-            margin: 0;
-            padding: 8px;
-            background: orange;
-            min-width: 400px;
-            /*border: 5px solid orangered;*/
-        }
-        .list{
-            display: none;
-        }
-        .list.active{
-            display: block;
-        }
-        #buttonSaveOperator{
-            display: none;
-        }
-    </style>
-</head>
-<body> 
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+			body {
+				margin: 0;
+				padding: 6px;
+				background: orange;
+				min-width: 420px;
+			}
+			.list {
+				display: none;
+			}
+			.list.active {
+				display: block;
+			}
+			#buttonSaveOperator {
+				display: none;
+			}
 
-<div style="clear: both"></div>
-<div class="list"></div>
+			.circle {
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				display: inline-block;
+			}
+			.red {
+				background: red;
+			}
+			.green {
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		Ловим:
+		<select name="" id="mySelect">
+			<option value="✕1">✕1</option>
+			<option value="✕2">✕2</option>
+			<option value="✕3">✕3</option>
+			<option value="✕4">✕4</option>
+			<option value="✕5">✕5</option>
+			<option value="✕6">✕6</option>
+			<option value="✕10">✕10</option>
+			<option value="✕15">✕15</option>
+			<option value="✕20">✕20</option>
+		</select>
 
-<button id="mybutton">Старт</button>
-<script src="script/popup.js"></script>
-</body>
+		Цикл:
+		<select name="" id="myCycle">
+			<option value="1">1 мин.</option>
+			<option value="2">2 мин.</option>
+			<option value="3">5 мин.</option>
+			<option value="4">10 мин.</option>
+			<option value="5">30 мин.</option>
+			<option value="6">1 час</option>
+		</select>
+
+		Отчет:
+		<select name="" id="myCycle">
+			<option value="✕1">Всё</option>
+			<option value="✕2">Слот</option>
+		</select>
+		&nbsp;
+
+		<button id="mybutton"></button>
+		<script src="script/popup.js"></script>
+		<div class="circle red"></div>
+		<div class="circle green"></div>
+	</body>
 </html>

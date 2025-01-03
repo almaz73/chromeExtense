@@ -1,34 +1,32 @@
 {
-  "manifest_version": 3,
-  "name": "Поиск элемента",
-  "version": "1.1",
-  "permissions": [
-    "tabs",
-    "storage",
-    "activeTab",
-    "scripting"
-  ],
-  "icons": {
-    "16": "assets/images/icon-16.png",
-    "32": "assets/images/icon-32.png",
-    "48": "assets/images/icon-48.png",
-    "128": "assets/images/icon-128.png"
-  },
+	"manifest_version": 3,
+	"name": "Поиск элемента",
+	"version": "1.1",
+	"permissions": ["tabs", "storage", "activeTab", "scripting"],
+	"icons": {
+		"16": "assets/images/icon-16.png",
+		"32": "assets/images/icon-32.png",
+		"48": "assets/images/icon-48.png",
+		"128": "assets/images/icon-128.png"
+	},
 
-  "background": {
-    "service_worker": "assets/background.js"
-  },
-  "action": {
-    "default_popup": "assets/popup.html",
-    "default_icon": "assets/images/icon-16.png"
-  },
-  "content_scripts": [ {
-    "js": ["assets/script/content.js"],
-    "matches": [
-      "https://developer.chrome.com/docs/extensions/*",
-      "https://developer.chrome.com/docs/webstore/*",
-      "https://www.avito.ru/*",
-      "https://fmap.ru/games/*"
-    ]
-  }]
+	"background": {
+		"service_worker": "assets/background.js"
+	},
+	"action": {
+		"default_popup": "assets/popup.html",
+		"default_icon": "assets/images/icon-16.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["assets/script/content.js"],
+			"matches": [
+				"https://developer.chrome.com/docs/extensions/*",
+				"https://developer.chrome.com/docs/webstore/*",
+				"https://seller.wildberries.ru/supplies-management/*",
+				"https://seller.wildberries.ru/supplies-management/warehouses-limits",
+				"https://fmap.ru/games/*"
+			]
+		}
+	]
 }
